@@ -1,75 +1,35 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4; /* Light gray background for the page */
-    color: #333;
-}
-header {
-    background: #333;
-    color: #fff;
-    padding: 1em 0;
-    text-align: center;
-}
-nav a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
-}
-main {
-    padding: 20px;
-    max-width: 800px;
-    margin: 20px auto; /* Centers the main content area */
-    background: #fff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    border-radius: 8px; /* Slightly rounded corners */
-}
-footer {
-    text-align: center;
-    padding: 10px;
-    background: #333;
-    color: #fff;
-    margin-top: 20px;
-}
-.job-post {
-    border: 1px solid #ddd;
-    padding: 15px;
-    margin-bottom: 25px;
-    border-radius: 5px;
-}
-
 /* ------------------------------------------------------------------- */
-/* STYLING AND GAP FIXES FOR CONTACT/EMAIL ROWS */
+/* STYLING FOR CONTACT/EMAIL ROWS */
 /* ------------------------------------------------------------------- */
 
-/* Base styling for both the phone number and email address containers */
-.contact-row, .email-display {
-    background-color: #e9e9e9; /* Light gray background */
+/* NEW: Style the container that holds both the phone and email */
+.contact-block {
+    background-color: #e9e9e9; /* Light gray background for the entire block */
     padding: 10px;
     border-left: 5px solid #007bff; /* Blue strip on the left */
-    font-weight: bold;
-    display: block; /* IMPORTANT: Makes it take up full width (same size) */
-    margin-top: 10px; 
-    margin-bottom: 0; /* REMOVES GAP between rows */
-    width: 90%; /* Defines the width of the box */
-    font-size: 1.1em;
-    user-select: all; 
+    width: 90%; /* Defines the width of the entire block */
+    margin: 10px 0; /* Space above/below the block */
     border-radius: 3px;
-    box-sizing: border-box; /* Ensures padding/border doesn't increase width */
+    box-sizing: border-box; 
 }
 
-/* Adjust margins on surrounding elements to minimize gaps */
+/* Style the text inside the block to be bold and the correct size, 
+   but NO padding/border so they sit flush */
+.contact-block p {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin: 0; /* REMOVE all gaps between text lines */
+    padding: 2px 0; /* Small vertical padding for separation */
+    user-select: all; 
+}
+
+/* Remove default margins from Application Instructions heading */
 .job-post h4 {
-    margin-bottom: 5px; /* Reduce space after heading (e.g., Application Instructions) */
+    margin-bottom: 5px; 
     margin-top: 20px;
 }
+/* General paragraph styling */
 .job-post p {
     margin-top: 5px; 
-    margin-bottom: 5px; /* Reduce space above/below standard text */
-}
-
-/* Remove margin above the first row if it follows text directly */
-.job-post p + .contact-row, 
-.job-post p + .email-display {
-    margin-top: 10px; 
+    margin-bottom: 5px; 
 }
